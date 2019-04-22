@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/home_background">
+
+    <ImageButton
+        android:id="@+id/btnRemove"
+        android:layout_margin="0dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/exit"
+        android:fitsSystemWindows="true"
+        android:scaleType="centerCrop"
+        android:background="@android:color/transparent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"/>
+
+    <TextView
+        android:id="@+id/titleItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textSize="25sp"
+        android:textStyle="normal"
+        android:textColor="@color/black"
+        android:layout_alignParentLeft="true"/>
+
+
+    <TextView
+        android:id="@+id/descItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray"
+        android:textSize="15sp"
+        android:layout_below="@+id/titleItem"
+        android:maxLines="2"
+        android:text="Description Description"
+        android:layout_toLeftOf="@+id/dateAdded"
+        android:layout_alignParentLeft="true"/>
+
+    <TextView
+        android:id="@+id/dateAdded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date Added"
+        android:layout_marginRight="2sp"
+        android:textColor="@color/gray"
+        android:textSize="12sp"
+        android:layout_below="@+id/btnRemove"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="10dp"
+        android:paddingTop="20dp"/>
+    <TextView
+        android:id="@+id/timeAdded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="04:53"
+        android:layout_gravity="center"
+        android:textColor="@color/gray"
+        android:textSize="12sp"
+        android:layout_below="@+id/dateAdded"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="13sp"/>
+
+
+</RelativeLayout>

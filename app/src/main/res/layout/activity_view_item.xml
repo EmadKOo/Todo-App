@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewItem">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                app:contentScrim="@color/colorPrimary"
+                app:expandedTitleTextAppearance="@android:color/transparent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <ImageView
+                    android:id="@+id/imgViewItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:onClick="pickImag"
+                    android:src="@drawable/blue"
+                    android:scaleType="fitXY"
+                    app:layout_collapseMode="parallax" />
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                    app:title=""></android.support.v7.widget.Toolbar>
+            </android.support.design.widget.CollapsingToolbarLayout>
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:layout_below="@+id/appBar"
+            android:layout_above="@+id/bottom"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/linear">
+
+                <EditText
+                    android:id="@+id/viewTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/black"
+                    android:text="Title"
+                    android:enabled="false"
+                    android:background="@android:color/transparent"
+                    android:textSize="23sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_alignParentTop="true"/>
+
+                <EditText
+                    android:id="@+id/viewDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@android:color/transparent"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Description"
+                    android:enabled="false"
+                    android:textSize="19sp"
+                    android:textColor="@color/black"
+                    android:layout_below="@+id/viewTitle"/>
+
+            </RelativeLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <RelativeLayout
+            android:id="@+id/bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:layout_gravity="bottom">
+
+            <ImageButton
+                android:id="@+id/btnSave"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/j"
+                android:layout_alignParentRight="true"
+                android:onClick="updateItem"
+                android:layout_margin="20dp"/>
+
+            <ImageButton
+                android:id="@+id/pickImage"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/cam"
+                android:layout_margin="20dp"
+                android:layout_toLeftOf="@+id/btnSave"
+                android:onClick="pickImag"/>
+
+            <ImageButton
+                android:id="@+id/del"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/delnote"
+                android:layout_margin="20dp"
+                android:layout_toLeftOf="@+id/pickImage"
+                android:onClick="deleteItem"/>
+
+            <TextView
+                android:id="@+id/cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:text="Cancel"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"
+                android:layout_margin="20dp"
+                android:onClick="cancel"
+                android:textSize="20sp"/>
+        </RelativeLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/editButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="72dp"
+        android:text="Button"
+        android:src="@drawable/edit"
+        app:fabCustomSize="40dp"
+        app:backgroundTint="@color/SteelBlue"
+        android:onClick="EnableEditMode"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.977"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>
